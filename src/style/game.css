@@ -1,0 +1,282 @@
+.fall-guys-button {
+    /* Font and Text Styling */
+    font-family: 'Arial', sans-serif; /* Use a bold, clean sans-serif font */
+    font-weight: bold;
+    font-size: 24px; /* Adjust size as needed */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Dark text shadow for readability */
+    text-transform: uppercase; /* Fall Guys UI often uses uppercase text */
+  
+    /* Button Shape and Sizing */
+    padding: 15px 30px;
+    border-radius: 25px; /* Creates the highly rounded corners */
+    border: 4px solid #C72A8B; /* Darker pink border */
+  
+    /* Background Gradient and Inner Highlight */
+    background: linear-gradient(to bottom, #FF5ABA, #E83DAA); /* Pink gradient */
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.3), /* Inner white highlight */
+      0 6px 8px rgba(0, 0, 0, 0.3); /* Dark drop shadow */
+  
+    /* General Properties */
+    cursor: pointer;
+    transition: all 0.1s ease-in-out; /* Smooth transition for interactions */
+  }
+  
+  /* Style for when the button is hovered over */
+  .fall-guys-button:hover {
+    transform: translateY(-2px); /* Lifts the button slightly */
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.4),
+      0 8px 10px rgba(0, 0, 0, 0.4); /* Increases the drop shadow */
+  }
+  
+  /* Style for when the button is actively being clicked */
+  .fall-guys-button:active {
+    transform: translateY(2px); /* Pushes the button down */
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.3); /* Reduces the drop shadow */
+  }
+
+  .fall-guys-button-secondary {
+    /* Inherit some base styles if you have a common class, or redefine them */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    
+    padding: 15px 30px;
+    border-radius: 25px;
+  
+    /* Different Color Scheme */
+    background-color: #00B4C5; /* Bright teal */
+    border: 4px solid #008D9A; /* Darker teal border */
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.3),
+      0 6px 8px rgba(0, 0, 0, 0.3);
+  
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .fall-guys-button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.4),
+      0 8px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .fall-guys-button-secondary:active {
+    transform: translateY(2px);
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .fall-guys-input {
+        /* Font and Text Styling */
+        font-family: 'Arial', sans-serif; /* Match the button's font */
+        font-weight: bold;
+        font-size: 20px; /* Slightly smaller than the button text is often good */
+        color: #333; /* Dark text for readability on a light background */
+        
+        /* Box Shape and Sizing */
+        padding: 15px 20px;
+        border-radius: 20px; /* Highly rounded corners */
+        border: 4px solid #B0B0B0; /* A solid, slightly dark border */
+        background-color: #F0F0F0; /* Light grey background */
+      
+        /* Shadows for Depth */
+        box-shadow: 
+          inset 0 4px 6px rgba(0, 0, 0, 0.1); /* Inner shadow to give a pressed-in look */
+      
+        /* General Properties */
+        outline: none; /* Removes the default browser focus outline */
+        transition: all 0.2s ease-in-out; /* Smooth transition for focus effect */
+      }
+      
+      /* Style for when the input field is focused (being typed in) */
+      .fall-guys-input:focus {
+        border-color: #00B4C5; /* Use the vibrant teal for the focus highlight */
+        box-shadow: 
+          inset 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 0 10px rgba(0, 180, 197, 0.5); /* Adds a soft outer glow in the same teal color */
+      }
+      
+      /* Style for the placeholder text */
+      .fall-guys-input::placeholder {
+        color: #888;
+        font-weight: normal;
+      }
+
+      /* --- Container Style (from your JavaScript inline styles) --- */
+.answer-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column; /* Changed for better stacking on mobile */
+    align-items: center;   /* Center items within the container */
+    gap: 20px; /* Increased gap for a chunkier look */
+  }
+  
+  /* --- Input Field Style (Fall Guys theme applied) --- */
+  .answer-input {
+    /* Font and Text */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    text-align: center; /* Centering the number input looks nice */
+  
+    /* Box Shape and Sizing */
+    width: 280px; /* A good default width */
+    padding: 15px 20px;
+    border-radius: 20px;
+    border: 4px solid #B0B0B0;
+    background-color: #F0F0F0;
+  
+    /* Shadows for Depth */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    /* General Properties */
+    outline: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Style for when the input field is focused */
+  .answer-input:focus {
+    border-color: #00B4C5; /* Vibrant teal highlight */
+    box-shadow: 
+      inset 0 4px 6px rgba(0, 0, 0, 0.1),
+      0 0 10px rgba(0, 180, 197, 0.5); /* Soft outer glow */
+  }
+  
+  /* Style for the placeholder text */
+  .answer-input::placeholder {
+    color: #888;
+    font-weight: normal;
+  }
+  
+  /* Hides the default number input arrows for a cleaner look */
+  .answer-input::-webkit-outer-spin-button,
+  .answer-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .answer-input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+  
+  
+  /* --- Button Style (Fall Guys theme applied) --- */
+  .answer-button {
+    /* Font and Text */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+  
+    /* Button Shape and Sizing */
+    padding: 15px 40px;
+    border-radius: 25px;
+    border: 4px solid #C72A8B; /* Darker pink border */
+  
+    /* Background and Shadows */
+    background: linear-gradient(to bottom, #FF5ABA, #E83DAA); /* Pink gradient */
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.3), /* Inner highlight */
+      0 6px 8px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  
+    /* General Properties */
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .answer-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.4),
+      0 8px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .answer-button:active {
+    transform: translateY(2px);
+    box-shadow: 
+      inset 0 4px 0 rgba(255, 255, 255, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ============================================= */
+/* === NEW: Game Over / Results Screen Styles === */
+/* ============================================= */
+
+.game-over-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.results-panel {
+  position: relative;
+  background: linear-gradient(to bottom, #4ecdc4, #3aa89d); /* Vibrant Teal Gradient */
+  padding: 40px;
+  padding-top: 80px; /* Extra padding for the crown */
+  border-radius: 40px;
+  border: 8px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.crown-image {
+  position: absolute;
+  top: -200px; /* Position half-way out of the top */
+  left: 50%;
+  transform: translateX(-55%) rotate(-15deg);
+  width: 300px;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3)); /* Soft shadow for the crown */
+}
+
+.results-title {
+  font-size: 48px;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  margin: 0 0 30px 0;
+}
+
+.winner-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Aligns podium spots at the bottom */
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.podium-spot {
+  background-color: #f0f0f3;
+  color: #333;
+  border-radius: 20px;
+  padding: 20px;
+  width: 160px;
+  border: 5px solid #bdc3c7;
+  box-shadow: inset 0 5px 0 rgba(255,255,255,0.8), 0 6px 10px rgba(0,0,0)
+}

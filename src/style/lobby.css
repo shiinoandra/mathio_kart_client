@@ -1,0 +1,220 @@
+/* --- Global Lobby Setup --- */
+#lobby-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.lobby-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+}
+
+/* --- MODIFIED Header --- */
+.lobby-header {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* This will center the title */
+    align-items: center;
+    position: relative; /* Allows absolute positioning for the back button */
+    padding: 0 20px;
+    pointer-events: auto;
+}
+
+/* NEW Title Styling */
+.lobby-header h1 {
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    margin: 0; /* Remove default margin */
+    /* Styling to match other elements */
+    background: linear-gradient(to bottom, #ffc72c, #f38756);
+    color: white;
+    padding: 15px 50px;
+    border-radius: 0px; /* Pill shape */
+    border: 5px solid #b88700;
+    box-shadow: 0 8px 10px rgba(0,0,0,0.25);
+}
+
+/* MODIFIED Back Button */
+.back-btn {
+    position: absolute; /* Take it out of the layout flow */
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: linear-gradient(to bottom, #777, #555);
+    color: white;
+    border: 3px solid #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 3px 0 rgba(255,255,255,0.3), 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.back-btn:hover {
+    transform: translateY(-52%); /* Slight lift on hover */
+}
+
+/* --- Main Content Panel --- */
+.players-section {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.status-text {
+    background: linear-gradient(to bottom, #FF5ABA, #E83DAA);
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: inset 0 3px 0 rgba(255,255,255,0.3), 0 4px 6px rgba(0,0,0,0.2);
+    border: 3px solid #C72A8B;
+}
+
+/* --- Player Card Grid --- */
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    min-height: 290px;
+}
+
+.player-card {
+    width: 210px;
+    background: #F0F0F3;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.character-image {
+    height: 180px;
+    background-size: contain;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    background-color: #ddd;
+    background-image: radial-gradient(circle at 50% 100%, #84fab0 0%, #8fd3f4 100%);
+    background-size: 160%;
+    background-position: center 5%;
+    background-repeat: no-repeat;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+}
+
+.player-name {
+    font-size: 20px;
+}
+
+/* MODIFIED Status Bar Styling */
+.player-status {
+    font-size: 15px; /* Bigger font */
+    font-weight: bold;
+    padding: 8px 25px; /* More padding */
+    border-radius: 25px; /* More rounded */
+    color: white;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    width: 90%; /* Give it a consistent width */
+    text-align: center; /* Center the text and icon */
+}
+
+.status-not-ready {
+    background-color: #FF5ABA;
+}
+
+.status-ready {
+    background-color: #4ecdc4;
+}
+
+/* --- Bottom Controls --- */
+.controls-section {
+    padding-bottom: 20px;
+    pointer-events: auto;
+    display: flex;
+    gap: 20px;
+}
+
+/* ... (Rest of the CSS is unchanged) ... */
+.ready-btn, .start-btn {
+    padding: 18px 50px;
+    border: none;
+    border-radius: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 4px 0 rgba(255,255,255,0.4), 0 6px 8px rgba(0,0,0,0.3);
+}
+
+.ready-btn {
+    background: linear-gradient(to bottom, #4ecdc4, #3aa89d);
+    color: white;
+    border: 5px solid #2e867d;
+}
+
+.ready-btn.not-ready {
+    background: linear-gradient(to bottom, #ff6b6b, #e05252);
+    border-color: #b84444;
+}
+
+.start-btn {
+    background: linear-gradient(to bottom, #FFD700, #FFAA00);
+    color: white;
+    border: 5px solid #FFC400;
+}
+
+.ready-btn:hover, .start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: inset 0 4px 0 rgba(255,255,255,0.4), 0 8px 12px rgba(0,0,0,0.4);
+}
+
+.ready-btn:active, .start-btn:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 4px 0 rgba(0,0,0,0.2);
+}
